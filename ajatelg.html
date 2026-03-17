@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajatelg - Tõlkes sündinud</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Inter:wght@400;500&family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@400;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <div class="logo">Tõlkes sündinud</div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Avaleht</a></li>
+    <li><a href="ajatelg.html" class="active">Ajatelg</a></li>
+    <li><a href="õppemäng.html">Õppemäng</a></li>
+    <li><a href="näitusest.html">Näitusest</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</nav>
+
+<section class="timeline-section">
+
+  <!-- Clickable center box -->
+  <div class="timeline-box" id="timelineBox">
+    <span>Klõpsa, et avada ajatelg</span>
+  </div>
+
+  <!-- Timeline container -->
+  <div class="timeline-container" id="timelineContainer">
+
+    <!-- Close button top-right -->
+    <button class="close-button" id="collapseButton">&times;</button>
+
+    <!-- Timeline events -->
+    <div class="timeline-event left">
+      <div class="event-box">
+        <span class="event-date">1525</span>
+        <h3>Esimene tõlketöö</h3>
+        <p>Esimene tõlketöö ilmus Eestis...</p>
+        <img src="materjalid/event1.jpg" alt="Event 1525">
+      </div>
+    </div>
+
+    <div class="timeline-event right">
+      <div class="event-box">
+        <span class="event-date">1700</span>
+        <h3>Kiriku ja hariduse tõlked</h3>
+        <p>Olulised tõlked ilmusid kiriku ja hariduse vallas.</p>
+        <img src="materjalid/event2.jpg" alt="Event 1700">
+      </div>
+    </div>
+
+    <div class="timeline-event left">
+      <div class="event-box">
+        <span class="event-date">1800</span>
+        <h3>Rahvuslik liikumine</h3>
+        <p>Tõlke- ja kirjandusajalugu laienes rahvusliku liikumise kaudu.</p>
+        <img src="materjalid/event3.jpg" alt="Event 1800">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-logo">Tõlkes sündinud</p>
+  <p class="footer-copy">© 2026 Tõlkes sündinud. Kõik õigused kaitstud.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

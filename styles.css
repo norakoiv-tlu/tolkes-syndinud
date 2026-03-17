@@ -1,0 +1,362 @@
+/* GENERAL */
+body{
+  margin:0;
+  background:#fafafa;
+  color:#222;
+  font-family:"EB Garamond", serif;
+  font-size:20px;
+  line-height:1.6;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:white;
+  border-bottom:1px solid #eee;
+}
+
+.logo{
+  font-family:"Libre Baskerville", serif;
+  font-weight:700;
+  font-size:1.5rem;
+  letter-spacing:0.03em;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:30px;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-family:"Inter", sans-serif;
+  font-weight:500;
+  color:#333;
+}
+
+.nav-links a:hover{
+  color:black;
+}
+
+/* Active link styling in navbar */
+.nav-links a.active {
+  color: black;       /* highlights active page */
+  font-weight: 600;   /* slightly bolder */
+  border-bottom: 2px solid black; /* optional subtle underline */
+  padding-bottom: 2px; /* space for the underline */
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:#333;
+}
+
+/* HERO */
+.hero{
+  max-width:800px;
+  margin:120px auto;
+  padding:0 20px;
+}
+
+h1{
+  font-family:"Playfair Display", serif;
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+/* HERO CONTENT: H2 + VIDEO SIDE-BY-SIDE */
+.hero-content {
+  display: flex;
+  align-items: center; /* vertically center H2 next to video */
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.hero-text {
+  max-width: 450px; /* keeps text column readable, museum-style */
+  flex: 1 1 300px;
+}
+
+.hero-text h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.video-wrapper {
+  flex: 1 1 350px; /* video width */
+  max-width: 450px;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+/* DROPCAP */
+.dropcap::first-letter{
+  font-family:"UnifrakturMaguntia", cursive;
+  font-size:4rem;
+  float:left;
+  line-height:0.8;
+  margin-right:10px;
+  margin-top:5px;
+}
+
+/* FOOTER */
+.footer {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  padding: 20px 15px;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  color: #555;
+}
+
+.footer-logo {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-size: 0.95rem; /* subtle but visible */
+  margin-bottom: 5px;
+}
+
+.footer-copy {
+  font-size: 0.8rem; /* very small, unobtrusive */
+  color: #888;
+  margin: 0;
+}
+
+/* Clickable center box */
+.timeline-box {
+  width: 70%;
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 50px 20px;
+  background: #333;
+  color: white;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.timeline-box:hover {
+  transform: scale(1.05);
+  background: #444;
+}
+
+/* Close button at top-right */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Timeline container */
+.timeline-container {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  display: none;
+  transition: all 0.5s ease;
+  padding-top: 50px; /* space for close button */
+}
+
+/* Vertical line in center */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;        /* thicker line */
+  height: 100%;
+  background: #ccc;
+  top: 0;
+  z-index: 1;
+}
+
+/* Timeline events */
+.timeline-event {
+  position: relative;
+  width: 45%;         /* smaller box width */
+  padding: 40px 20px;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.timeline-event.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-event.right {
+  left: 55%;          /* spacing between line and right boxes */
+  text-align: left;
+}
+
+/* Event box styling */
+.event-box {
+  display: inline-block;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 10px;
+  max-width: 300px;   /* smaller boxes */
+}
+
+.event-box img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+.event-date {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* Animation class */
+.timeline-event.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Mobile responsiveness */
+@media (max-width:768px){
+  .timeline-event, .timeline-event.left, .timeline-event.right {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+    transform: translateX(50px);
+  }
+
+  .timeline-container::before {
+    left: 2%;
+    transform: none;
+    width: 2px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width:768px){
+  .timeline-event, .timeline-event.left, .timeline-event.right {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-container::before {
+    left: 2%;
+    transform: none;
+    width: 2px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width:768px){
+  .timeline-event, .timeline-event.left, .timeline-event.right {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-container::before {
+    left: 2%;
+    transform: none;
+    width: 2px;
+  }
+}
+
+
+/* Responsive */
+@media (max-width:768px){
+  .timeline-content, .timeline-content.left, .timeline-content.right {
+    width: 90%;
+    justify-content: flex-start !important;
+    margin: 0 0 20px 0 !important;
+    flex-direction: row;
+  }
+
+  .timeline-container::before {
+    left: 2%;
+    width: 2px;
+  }
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .nav-links{
+    position:absolute;
+    right:0;
+    top:70px;
+    background:white;
+    flex-direction:column;
+    width:200px;
+    padding:20px;
+    gap:20px;
+    display:none;
+    border-left:1px solid #eee;
+    border-bottom:1px solid #eee;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+   .hero-content {
+    flex-direction: column; /* stack text above video */
+    gap: 0; /* remove extra gap */
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .hero-text, .video-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-text h2 {
+    text-align: center; /* optional centering */
+    margin-bottom: 10px; /* small space between h2 and video */
+  }
+}
+
