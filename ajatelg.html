@@ -33,45 +33,86 @@
 
 <section class="timeline-section">
 
-  <!-- Clickable center box -->
+  <!-- Title ABOVE button -->
+  <h2 class="timeline-title">Loomingu raamatukogu</h2>
+
+  <!-- Clickable box -->
   <div class="timeline-box" id="timelineBox">
     <span>Klõpsa, et avada ajatelg</span>
   </div>
 
-  <!-- Timeline container -->
+  <!-- Timeline -->
   <div class="timeline-container" id="timelineContainer">
 
-    <!-- Close button top-right -->
+    <!-- Close button (safe position) -->
     <button class="close-button" id="collapseButton">&times;</button>
 
-    <!-- Timeline events -->
-    <div class="timeline-event left">
-      <div class="event-box">
-        <span class="event-date">1525</span>
-        <h3>Esimene tõlketöö</h3>
-        <p>Esimene tõlketöö ilmus Eestis...</p>
-        <img src="materjalid/event1.jpg" alt="Event 1525">
+    <!-- EVENTS -->
+
+    <!-- 1 -->
+    <div class="timeline-event">
+      <div class="event-box left">
+        <div class="event-text">
+          <h3 class="book-title">"Elu suurelt maanteelt ja teisi jutte"</h3>
+          <p><strong>Ilmumise aasta:</strong> 1957</p>
+          <p><strong>Originaalkeel:</strong> soome</p>
+          <p><strong>Autor:</strong> Pentti Haanpää</p>
+          <p><strong>Tõlkija:</strong> Vaime Kabur</p>
+        </div>
+        <div class="event-image">
+          <img src="materjalid/Kaaned/Looming/elu-suurelt-maanteelt-ja-teisi-jutte_looming.jpg">
+        </div>
       </div>
     </div>
 
-    <div class="timeline-event right">
-      <div class="event-box">
-        <span class="event-date">1700</span>
-        <h3>Kiriku ja hariduse tõlked</h3>
-        <p>Olulised tõlked ilmusid kiriku ja hariduse vallas.</p>
-        <img src="materjalid/event2.jpg" alt="Event 1700">
+    <!-- 2 -->
+    <div class="timeline-event">
+      <div class="event-box right">
+        <div class="event-text">
+          <h3 class="book-title">"40 luuletust"</h3>
+          <p><strong>Ilmumise aasta:</strong> 1957</p>
+          <p><strong>Originaalkeel:</strong> vene</p>
+          <p><strong>Tõlkija:</strong> Felix Kotta</p>
+        </div>
+        <div class="event-image">
+          <img src="materjalid/Kaaned/Looming/40-luuletust-Kotta_Looming.jpg">
+        </div>
       </div>
     </div>
 
-    <div class="timeline-event left">
-      <div class="event-box">
-        <span class="event-date">1800</span>
-        <h3>Rahvuslik liikumine</h3>
-        <p>Tõlke- ja kirjandusajalugu laienes rahvusliku liikumise kaudu.</p>
-        <img src="materjalid/event3.jpg" alt="Event 1800">
+    <!-- 1 -->
+    <div class="timeline-event">
+      <div class="event-box left">
+        <div class="event-text">
+          <h3 class="book-title">"Ehatuule maa"</h3>
+          <p><strong>Ilmumise aasta:</strong> 1988</p>
+          <p><strong>Originaalkeel:</strong> eesti</p>
+          <p><strong>Autor:</strong> Uku Masing</p>
+        </div>
+        <div class="event-image">
+          <img src="materjalid/Kaaned/Looming/Ehatuule maa_looming.jpg">
+        </div>
       </div>
     </div>
 
+    <!-- 2 -->
+    <div class="timeline-event">
+      <div class="event-box right">
+        <div class="event-text">
+          <h3 class="book-title">Raamatu pealkiri</h3>
+          <p><strong>Ilmumise aasta:</strong> 1972</p>
+          <p><strong>Originaalkeel:</strong> saksa</p>
+          <p><strong>Autor:</strong> Autor Nimi</p>
+          <p><strong>Tõlkija:</strong> Tõlkija Nimi</p>
+        </div>
+        <div class="event-image">
+          <img src="materjalid/cover2.jpg">
+        </div>
+      </div>
+    </div>
+
+
+    
   </div>
 </section>
 
@@ -80,6 +121,12 @@
   <p class="footer-logo">Tõlkes sündinud</p>
   <p class="footer-copy">© 2026 Tõlkes sündinud. Kõik õigused kaitstud.</p>
 </footer>
+
+<!-- IMAGE MODAL -->
+<div class="image-modal" id="imageModal">
+  <span class="modal-close" id="modalClose">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 
 <script src="script.js"></script>
 </body>
