@@ -1,442 +1,394 @@
-/* GENERAL */
-body {
-  margin: 0;
-  background: #fafafa;
-  color: #222;
-  font-family: "EB Garamond", serif;
-  font-size: 20px;
-  line-height: 1.6;
+/* ==========================================================================
+   1. ÜLDISED STIILID & TÜPOGRAAFIA
+   ========================================================================== */
+:root {
+    --bg-color: #fafafa;
+    --text-main: #222;
+    --text-muted: #555;
+    --text-light: #888;
+    --border-color: #e5e5e5;
+    --accent-color: #000;
+    --font-serif: "EB Garamond", serif;
+    --font-heading: "Playfair Display", serif;
+    --font-ui: "Inter", sans-serif;
+    --font-logo: "Libre Baskerville", serif;
 }
 
-/* NAVBAR */
+body {
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    font-size: 19px; /* Veidi kohendatud loetavuse huvides */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. NAVIGATSIOON & JALUS
+   ========================================================================== */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.03em;
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
-  text-decoration: none;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  color: #333;
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    color: #444;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
-  color: black;
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
 }
 
 .nav-links a.active {
-  color: black;
-  font-weight: 600;
-  border-bottom: 2px solid black;
-  padding-bottom: 2px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 4px;
 }
 
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #333;
-}
-
-/* FOOTER */
 .footer {
-  background: #fafafa;
-  border-top: 1px solid #eee;
-  padding: 20px 15px;
-  text-align: center;
-  font-family: "EB Garamond", serif;
-  color: #555;
+    background: white;
+    border-top: 1px solid #eee;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 100px;
 }
 
 .footer-logo {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 5px;
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
 }
 
 .footer-copy {
-  font-size: 0.8rem;
-  color: #888;
-  margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-light);
 }
 
-/* TIMELINE SECTION */
+/* ==========================================================================
+   3. AJATELJE STRUKTUUR (TIMELINE)
+   ========================================================================== */
 .timeline-section {
-  text-align: center;
-  margin: 100px 0;
+    padding: 100px 0;
+    max-width: 1200px; /* Sinu soovitud laius */
+    margin: 0 auto;
 }
 
 .timeline-title {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  margin-bottom: 60px;
-  color: #222;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 80px;
 }
 
-/* TIMELINE CONTAINER */
 .timeline-container {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-top: 20px;
+    position: relative;
+    width: 100%;
 }
 
-/* CENTER LINE */
+/* Keskmine joon */
 .timeline-container::before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  background: #d0d0d0;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: #ccc;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* EACH ROW */
 .timeline-event {
-  position: relative;
-  width: 100%;
-  margin: 60px 0;
-  opacity: 0;
-  transition: opacity 0.6s ease;
+    position: relative;
+    width: 100%;
+    margin-bottom: 80px;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .timeline-event.visible {
-  opacity: 1;
+    opacity: 1;
 }
 
-/* BOX BASE */
+/* Sündmuse kastid */
 .event-box {
-  width: 42%;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 18px 22px;
-  border-radius: 6px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  position: relative;
+    width: 45%; /* Sinu soovitud laiem kasti suurus */
+    background: #fff;
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    position: relative;
 }
 
 .event-box.left {
-  margin-left: 0;
-  margin-right: auto;
-  transform: translateX(-40px);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+    margin-left: 0;
+    transform: translateX(-50px);
 }
 
 .event-box.right {
-  margin-left: auto;
-  margin-right: 0;
-  transform: translateX(40px);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+    margin-left: auto;
+    transform: translateX(50px);
 }
 
-.timeline-event.visible .event-box.left,
-.timeline-event.visible .event-box.right {
-  transform: translateX(0);
+.timeline-event.visible .event-box {
+    transform: translateX(0);
 }
 
-/* CLICKABLE HEADER */
+/* Päis ja Toggle */
 .event-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  padding-bottom: 4px;
-}
-
-.event-header:hover .book-title {
-  color: #555;
-}
-
-.toggle-icon {
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: #999;
-  line-height: 1;
-  transition: transform 0.3s ease, color 0.2s ease;
-  flex-shrink: 0;
-  margin-left: 12px;
-}
-
-.event-text.open .toggle-icon {
-  transform: rotate(45deg);
-  color: #444;
-}
-
-/* COLLAPSIBLE BODY */
-.event-body {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.45s ease, opacity 0.35s ease;
-  margin-top: 0;
-}
-
-.event-text.open .event-body {
-  max-height: 3000px;  /* was 600px — too small for long content with sub-toggles */
-  opacity: 1;
-  margin-top: 12px;
-}
-
-/* TEXT */
-.event-text {
-  text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 }
 
 .book-title {
-  font-family: "Playfair Display", serif;
-  font-size: 1.15rem;
-  margin: 0;
-  transition: color 0.2s ease;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin: 0;
 }
 
-.event-body p {
-  font-family: "EB Garamond", serif;
-  font-size: 1.15rem;   /* bigger than before */
-  margin: 6px 0;
-  color: #333;
-  line-height: 1.7;
+.toggle-icon {
+    font-size: 1.8rem;
+    color: #bbb;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    right: 0;
-    top: 70px;
-    background: white;
-    flex-direction: column;
-    width: 200px;
-    padding: 20px;
-    gap: 20px;
-    display: none;
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .timeline-container::before {
-    left: 20px;
-  }
-
-  .event-box {
-    width: 85%;
-    margin: 0 auto !important;
-    transform: none !important;
-  }
+.event-text.open .toggle-icon {
+    transform: rotate(45deg);
+    color: var(--accent-color);
 }
 
-/* SUB-TOGGLES */
+.event-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+}
+
+.event-text.open .event-body {
+    max-height: 4000px; /* Piisavalt suur sisu mahutamiseks */
+    opacity: 1;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   4. ALAM-TOGGLE'ID JA RAAMATUD
+   ========================================================================== */
 .sub-toggle {
-  margin-top: 16px;
-  border-top: 1px solid #e0e0e0;
-  padding-top: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
 }
 
 .sub-toggle-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  padding: 4px 0;
-}
-
-.sub-toggle-header:hover .sub-toggle-title {
-  color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 }
 
 .sub-toggle-title {
-  font-family: "Playfair Display", serif;
-  font-size: 1rem;
-  margin: 0;
-  color: #333;
-  transition: color 0.2s ease;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: #333;
 }
 
 .sub-toggle-icon {
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: #aaa;
-  transition: transform 0.3s ease, color 0.2s ease;
-  flex-shrink: 0;
-  margin-left: 10px;
+    font-size: 1.4rem;
+    color: #ccc;
+    transition: transform 0.3s ease;
 }
 
 .sub-toggle.open .sub-toggle-icon {
-  transform: rotate(45deg);
-  color: #555;
+    transform: rotate(45deg);
 }
 
 .sub-toggle-body {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.45s ease, opacity 0.35s ease;
-  margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
 }
 
 .sub-toggle.open .sub-toggle-body {
-  max-height: 1000px;
-  opacity: 1;
-  margin-top: 14px;
+    max-height: 1500px;
+    opacity: 1;
+    margin-top: 20px;
 }
 
-/* BOOK CARDS INSIDE SUB-TOGGLE */
+/* Raamatu rida */
 .sub-book {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    align-items: flex-start;
 }
 
 .sub-book:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+    margin-bottom: 10px;
+}
+
+/* Pildi konteiner ja vihje */
+.sub-book-img-container {
+    width: 110px; /* Sinu soovitud pildi laius */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sub-book img {
-  width: 70px;
-  flex-shrink: 0;
-  border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 110px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
+.sub-book img:hover {
+    transform: scale(1.05);
+}
+
+.click-hint {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 8px;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* Raamatu info */
 .sub-book-meta {
-  flex: 1;
+    flex: 1;
 }
 
 .sub-book-title {
-  font-family: "Playfair Display", serif;
-  font-size: 0.95rem;
-  margin: 0 0 6px 0;
-  color: #222;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
 }
 
 .sub-book-meta p {
-  font-size: 0.9rem !important;
-  margin: 2px 0 !important;
-  color: #555 !important;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
 }
 
-/* MODAL BACKGROUND */
+/* ==========================================================================
+   5. MODAALAKEN (GALERII)
+   ========================================================================== */
 .image-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.88);
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
 }
 
-/* WRAPPER keeps image + counter together */
 .modal-img-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+    text-align: center;
 }
 
-/* IMAGE INSIDE MODAL */
 .modal-content {
-  max-width: 75vw;
-  max-height: 78vh;
-  border-radius: 6px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-  display: block;
+    max-width: 85vw;
+    max-height: 80vh;
+    border-radius: 4px;
 }
 
-/* COUNTER e.g. "2 / 3" */
 .modal-counter {
-  color: #ccc;
-  font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
-  margin: 0;
+    color: #999;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    margin-top: 15px;
 }
 
-/* CLOSE BUTTON */
 .modal-close {
-  position: absolute;
-  top: 24px;
-  right: 36px;
-  font-size: 2.5rem;
-  color: white;
-  cursor: pointer;
-  line-height: 1;
-  user-select: none;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
 }
 
-.modal-close:hover {
-  color: #ccc;
-}
-
-/* ARROWS */
 .modal-arrow {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 4rem;
-  cursor: pointer;
-  padding: 0 10px;
-  line-height: 1;
-  user-select: none;
-  transition: color 0.2s ease, transform 0.15s ease;
-  flex-shrink: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 40px;
+    position: absolute;
 }
 
-.modal-arrow:hover {
-  color: #ccc;
-  transform: scale(1.1);
-}
+.modal-prev { left: 20px; }
+.modal-next { right: 20px; }
 
-.modal-arrow:disabled {
-  color: #555;
-  cursor: default;
-  transform: none;
+/* ==========================================================================
+   6. MOBIILNE KOHANDAMINE
+   ========================================================================== */
+@media (max-width: 900px) {
+    .timeline-container::before {
+        left: 30px;
+    }
+    
+    .event-box {
+        width: calc(100% - 80px);
+        margin-left: 60px !important;
+        transform: none !important;
+    }
+
+    .navbar {
+        padding: 15px 25px;
+    }
+
+    .nav-links {
+        display: none; /* Siia tuleks lisada hamburgeri loogika JS-iga */
+    }
+
+    .sub-book {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
