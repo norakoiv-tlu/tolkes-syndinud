@@ -1,99 +1,192 @@
-// HAMBURGER
+// =========================
+// HAMBURGER MENU
+// =========================
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
+function toggleMenu() {
   navLinks.classList.toggle("active");
+}
+
+hamburger?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleMenu();
 });
 
-// TIMELINE: animate events on load
-const events = document.querySelectorAll(".timeline-event");
-events.forEach((event, index) => {
-  setTimeout(() => {
-    event.classList.add("visible");
-  }, index * 200);
-});
-
-// MAIN ACCORDION
-const headers = document.querySelectorAll(".event-header");
-headers.forEach(header => {
-  header.addEventListener("click", () => {
-    const eventText = header.closest(".event-text");
-    const isOpen = eventText.classList.contains("open");
-    document.querySelectorAll(".event-text.open").forEach(el => el.classList.remove("open"));
-    if (!isOpen) eventText.classList.add("open");
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
   });
 });
 
-// SUB-TOGGLES
-const subHeaders = document.querySelectorAll(".sub-toggle-header");
-subHeaders.forEach(header => {
+document.addEventListener("click", (e) => {
+  if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+    navLinks.classList.remove("active");
+  }
+});
+
+
+// =========================
+// TIMELINE ANIMATION
+// =========================
+const timelineEvents = document.querySelectorAll(".timeline-event");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+timelineEvents.forEach(event => observer.observe(event));
+
+
+// =========================
+// MAIN TOGGLES
+// =========================
+document.querySelectorAll(".event-header").forEach(header => {
+  header.addEventListener("click", () => {
+    const block = header.closest(".event-text");
+    const isOpen = block.classList.contains("open");
+
+    document.querySelectorAll(".event-text.open")
+      .forEach(el => el.classList.remove("open"));
+
+    if (!isOpen) block.classList.add("open");
+  });
+});
+
+
+// =========================
+// SUB TOGGLES
+// =========================
+document.querySelectorAll(".sub-toggle-header").forEach(header => {
   header.addEventListener("click", (e) => {
     e.stopPropagation();
     header.closest(".sub-toggle").classList.toggle("open");
   });
 });
 
-// MODAL WITH GALLERY
-const modal       = document.getElementById("imageModal");
-const modalImg    = document.getElementById("modalImage");
-const modalClose  = document.getElementById("modalClose");
-const modalPrev   = document.getElementById("modalPrev");
-const modalNext   = document.getElementById("modalNext");
-const modalCounter= document.getElementById("modalCounter");
 
-let gallery = [];
+// =========================
+// IMAGE MODAL (TIMELINE ONLY)
+// =========================
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalClose = document.getElementById("modalClose");
+const modalPrev = document.getElementById("modalPrev");
+const modalNext = document.getElementById("modalNext");
+const modalCounter = document.getElementById("modalCounter");
+
+let currentImages = [];
 let currentIndex = 0;
 
-function openModal(images, startIndex) {
-  gallery = images;
-  currentIndex = startIndex;
+
+// open modal
+function openModal(images, index = 0) {
+  currentImages = images;
+  currentIndex = index;
+
   updateModal();
-  modal.style.display = "flex";
+  modal.classList.add("active");
 }
 
+// update modal view
 function updateModal() {
-  modalImg.src = gallery[currentIndex];
-  modalCounter.textContent = gallery.length > 1
-    ? `${currentIndex + 1} / ${gallery.length}`
-    : "";
-  modalPrev.disabled = currentIndex === 0;
-  modalNext.disabled = currentIndex === gallery.length - 1;
+  if (!currentImages.length) return;
+
+  modalImg.src = currentImages[currentIndex];
+
+  if (modalCounter) {
+    modalCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+  }
+
+  // optional: disable arrows at ends (or you can wrap instead)
+  modalPrev.style.opacity = currentIndex === 0 ? "0.3" : "1";
+  modalNext.style.opacity = currentIndex === currentImages.length - 1 ? "0.3" : "1";
 }
 
-// Attach click to every sub-book image
-document.querySelectorAll(".sub-book img").forEach(img => {
-  img.style.cursor = "pointer";
-  img.addEventListener("click", () => {
-    // Read gallery from data-gallery, fallback to just the src
-    let images;
-    try {
-      images = JSON.parse(img.dataset.gallery || "[]");
-    } catch(e) {
-      images = [];
-    }
-    if (!images.length) images = [img.src];
-    openModal(images, 0);
-  });
+// close modal
+function closeModal() {
+  modal.classList.remove("active");
+  modalImg.src = "";
+  currentImages = [];
+  currentIndex = 0;
+}
+
+
+// =========================
+// MODAL EVENTS
+// =========================
+
+// close
+modalClose?.addEventListener("click", closeModal);
+
+modal?.addEventListener("click", (e) => {
+  if (e.target === modal) closeModal();
 });
 
-modalPrev.addEventListener("click", () => {
-  if (currentIndex > 0) { currentIndex--; updateModal(); }
-});
-
-modalNext.addEventListener("click", () => {
-  if (currentIndex < gallery.length - 1) { currentIndex++; updateModal(); }
-});
-
-// Keyboard navigation
+// keyboard navigation
 document.addEventListener("keydown", (e) => {
-  if (modal.style.display !== "flex") return;
-  if (e.key === "ArrowLeft")  { if (currentIndex > 0) { currentIndex--; updateModal(); } }
-  if (e.key === "ArrowRight") { if (currentIndex < gallery.length - 1) { currentIndex++; updateModal(); } }
-  if (e.key === "Escape")     { modal.style.display = "none"; }
+  if (!modal.classList.contains("active")) return;
+
+  if (e.key === "Escape") closeModal();
+
+  if (e.key === "ArrowRight") {
+    if (currentIndex < currentImages.length - 1) {
+      currentIndex++;
+      updateModal();
+    }
+  }
+
+  if (e.key === "ArrowLeft") {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateModal();
+    }
+  }
 });
 
-modalClose.addEventListener("click", () => modal.style.display = "none");
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) modal.style.display = "none";
+
+// =========================
+// MODAL ARROW BUTTONS (FIXED)
+// =========================
+modalNext?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (currentIndex < currentImages.length - 1) {
+    currentIndex++;
+    updateModal();
+  }
+});
+
+modalPrev?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateModal();
+  }
+});
+
+
+// =========================
+// TIMELINE IMAGE GALLERY (FIXED)
+// =========================
+document.querySelectorAll(".sub-book-img-container img").forEach(img => {
+  img.style.cursor = "pointer";
+
+  img.addEventListener("click", () => {
+    const gallery = img.getAttribute("data-gallery");
+
+    if (!gallery) return;
+
+    const images = JSON.parse(gallery);
+
+    // find correct index inside gallery (important fix)
+    const clickedSrc = img.getAttribute("src");
+    let index = images.indexOf(clickedSrc);
+    if (index === -1) index = 0;
+
+    openModal(images, index);
+  });
 });

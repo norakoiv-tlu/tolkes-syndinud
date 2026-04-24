@@ -3,69 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Õppemäng - Tõlkes sündinud</title>
+<title>Sarjadest - Tõlkes sündinud</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Inter:wght@400;500&family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@400;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
+
+<style>
+body {
+  scroll-behavior: smooth;
+  font-family: "EB Garamond", serif;
+}
+
+/* Layout container */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  line-height: 1.75;
+}
+
+/* Video space */
+.video-placeholder {
+  width: 100%;
+  height: 420px;
+  background: #e9e9e9;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+/* Headings */
+h2 {
+  font-family: "Playfair Display", serif;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 16px;
+}
+
+/* IMAGE + TEXT OPTIONS */
+.text-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin: 30px 0;
+}
+
+.text-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-row img {
+  width: 40%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.text-row .text {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .text-row,
+  .text-row.reverse {
+    flex-direction: column;
+  }
+
+  .text-row img {
+    width: 100%;
+  }
+}
+</style>
+
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
-
   <div class="logo">Tõlkes sündinud</div>
 
-  <ul class="nav-links" id="navLinks">
+  <ul class="nav-links">
     <li><a href="index.html">Avaleht</a></li>
     <li><a href="tõlkija.html">Tõlkija</a></li>
     <li><a href="sarjadest.html" class="active">Sarjadest</a></li>
     <li><a href="ajatelg.html">Ajatelg</a></li>
     <li><a href="näitusest.html">Näitusest</a></li>
+    <li><a href="õppemängud.html">Õppemängud</a></li>
   </ul>
-
-
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
 </nav>
 
-<!-- HERO SECTION --> 
+<!-- HERO -->
 <section class="hero">
-
-  <h1>[PAGE HERO TITLE]</h1>
-
-  <!-- Optional hero content like text + video -->
-  <div class="hero-content">
-    <div class="hero-text">
-      <h2>[SUBTITLE OR SHORT DESCRIPTION]</h2>
-    </div>
-
-    <!-- Optional video -->
-    <div class="video-wrapper">
-      <!-- Only include if the page has a video -->
-      <!--
-      <video controls>
-        <source src="materjalid/tervitusvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      -->
-    </div>
-  </div>
-
-  <p class="dropcap">
-    [PAGE INTRO TEXT OR PARAGRAPH]
-  </p>
-
+  <h1>Sarjadest</h1>
 </section>
 
+<!-- CONTENT -->
+<div class="content">
+
+<!-- VIDEO SPACE -->
+<div class="video-placeholder"></div>
+
+<h3>Ülevaade olulisematest raamatusarjadest, mis on läbi aegade süstematiseerinud ja suunanud Eesti lugeja maitset.</h3>
+<p>Kirjandusteoste avaldamine sarjadena on läbi erinevate aegade täitnud sarnaseid eesmärke. Majanduslikult ja turunduslikult on ühtse kujunduse ja formaadiga raamatute tootmine odavam ning eduka avalöögi korral tekitab sari lugejates ka kogumissoovi. Ideelises plaanis võimaldab kirjanduse sarjana välja andmine suunata publiku lugemiskogemust mingi valitud teema või žanri lõikes. Selle missiooni täitmine on tihti olnud seotud haridusliku ja kultuuripoliitilise sooviga luua ja kujundada kultuurikaanonit. Lugejate jaoks pakkusid tõlkekirjanduse sarjad enne Internetiga kaasnenud infoplahvatust süsteemset ja usaldatavat teed, mille kaudu jõuda maailmaklassika paremikuni, uute kirjandusvoolude või erinevate kultuuride kirjandusteni. Esimeseks ilukirjanduslikuks raamatusarjaks võib pidada Riia misjonikeskuse välja antud nummerdatud tõlkeraamatuid lastele (1857–1887), mille sisuks olid vaimulikud lood usuleidmisest ja misjonitegevusest. Piltidevaesel ajal eristusid need esi- ja tagakaaneillustratsioonidega vihikukesed teistest trükistest. Sajandi viimases kolmandikus ilmusid seiklusjuttudele keskenduv „Rahwa raamatukogu” (1879–1881), kus avaldati esimene tõlge James Fenimore Cooperi „Nahksuka juttudest” (tlk J. Jürgenstein (1854–1914)), ja nii algupärast kui ka tõlkekirjandust koondav „Eesti Rahwa-Biblioteek”, mis alustas 1880 saksa keelest tõlgitud „Raudse näukattega mehega” Matthias Johann Eiseni (1857–1934) tõlkes.</p>
+
+<h2>20. sajandi algus</h2>
+
+<p>20. sajandi alguse suurimaks tõlkesarjaks on Johannes Aaviku toimetatud „Hirmu ja õuduse jutud”, milles avaldati selle žanri väärtkirjandust Ameerikast (nt E. A. Poe), Prantsusmaalt (nt G. de Maupassant), Saksamaalt (nt E. T. A. Hoffmann), Venemaalt (nt N. Gogol) ja mujalt. Sarja populaarsust näitab selle pikk iga – esimene number ilmus 1914, viimane ehk 25. number 1929. aastal.</p>
+
+<p>Näidendid ilmusid peamiselt Hans Leokese „Rahva näitemängude” (1902–1922) sarjas ja Vanemuise Näitelavas, mis koondasid enda kätte tõlgete lavastamise õigused.</p>
+
+<p>Muinasjutud ja muu noortekirjandus avaldati Eesti Kirjanduse Seltsi koolikirjanduse toimkonna „Noorsoo kirjavara” sarjas.</p>
+
+<h2>Eesti Vabariik</h2>
+
+<p>Iseseisvusperioodi peamiseks tõlkesarjade publitseerijaks kujunes kirjastus-osaühing Loodus. Kirjastuse esimesena ilmunud sarjas „Looduse universaalbiblioteek” (1927–1931) avaldatud 109 teosest 105 olid tõlked (80 autori teosed tõlgituna 11 keelest).</p>
+
+<p>Mahukamaid teoseid anti välja „Looduse kroonise romaani” sarjas (1929–1940). Sarjas ilmus muuhulgas esimene Sigrid Undseti tõlge romaan „Kevad” Ernst Raudsepa (1899 1947) tõlkes, autori tuntuim teos „Kristiina Lauritsatütar” ilmus aga juba sarjas „Nobeli laureaadid” (1935–1939).</p>
+
+<p>Nõudlikumale sihtrühmale oli eelmainitud sarjale lisaks suunatud veel „Kirjasõna suurmeistrid” (1939). Samuti anti välja Fjodor Dostojevski kogutud teoste sari 15 köites.</p>
+
+<p>Universaalbiblioteegi järglane „Tänapäeva romaan“ (1932–1936) keskendus žanrikirjandusele. Krimikirjandust pakkus ka „Kriminaalromaan” (1937–1940). Noortele ilmus „Looduse kuldraamat” (1931–1939).</p>
+
+<p>Eesti Kirjanduse Seltsi „Maailmakirjandus” ja Eesti Kirjastuse Kooperatiivi „Põhjamaade romaane” laiendasid tõlkekirjanduse valikut.</p>
+
+<h2>Nõukogude eesti</h2>
+
+<p>Sõjajärgses Nõukogude Eestis anti välja Stalini preemiaga teoseid (1948‒1955). Hiljem ilmus „Seiklusjutte maalt ja merelt” (1955‒1962), mis tõi tagasi seiklus- ja ulmekirjanduse.</p>
+
+<p>„Loomingu Raamatukogu” keskendus kaasaegsele väliskirjandusele. Samuti ilmusid „Lenini preemia” ja „Nõukogude luule”.</p>
+
+<p>„Varamu” ja „Klassikalised lood” koondasid välisklassikat. „Mirabilia” tõi lugejateni rahvusvahelisi menukeid.</p>
+
+<h2>Tänapäev</h2>
+
+<p>Taasiseseisvunud Eestis tekkis uus kirjastusvabadus. Sarjad „Europeia”, „20. sajandi klassika” ja „Moodne aeg” tõid uusi tõlkesuundi.</p>
+
+<p>„Punane raamat” ja „Nobeli laureaat” jätkasid väärtkirjanduse traditsiooni. „Väikeste rahvaste suur kirjandus” tõi esile soome-ugri autorid.</p>
+
+<p>Tänapäeval on sarjad mitmekesised, hõlmates krimi-, fantaasia- ja armastusromaanide väljaandeid.</p>
+
+<p>Läbi aegade on Eesti lugejate lugemismaitset mõjutanud väga erinevad raamatusarjad, mis on tulnud nii kodumaisest kui ka rahvusvahelisest kirjandusest...</p>
+
+<p>Rahvusliku ärkamisaja suurkujud Friedrich Reinhold Kreutzwald ja Johann Voldemar Jannsen...</p>
+
+<p>Kreutzwaldi „Kalevipoeg” ja muud teosed kujundasid rahvuslikku identiteeti.</p>
+
+<p>J. D. Salingeri „Kuristik rukkis” tõi Eesti lugejani uue kultuurilise vaatenurga.</p>
+
+<p>Tõlkekirjandus okupatsioonide ajal oli ideoloogiline, kuid jätkas kirjanduse levitamist.</p>
+
+<p>Schilleri, Tolstoi ja „Kalevala” tõlked mõjutasid tugevalt Eesti kirjanduskultuuri.</p>
+
+<p>Itaalia röövlilood ja „Sõda ja rahu” tõlked olid olulised kirjanduslikud sündmused.</p>
+
+<p>„Mirabilia” sari tõi tagasi põnevus- ja ulmekirjanduse.</p>
+
+</div>
 <!-- FOOTER -->
 <footer class="footer">
+
   <p class="footer-logo">Tõlkes sündinud</p>
+
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <p class="footer-title">Toetajad ja partnerid</p>
+      <p class="footer-text">
+        Tallinna Ülikooli Humanitaarteaduste Instituut<br>
+        TLÜ Akadeemiline Raamatukogu<br>
+        ELU projekt
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-title">Uurimisprojekt</p>
+      <p class="footer-text">
+        “Tõlkimine ajaloos 1850–2010: tekstid, tegijad, institutsioonid, praktikad”
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-title">Kontakt</p>
+      <p class="footer-text">
+        <a href="https://translationinhistory.tlu.ee/" target="_blank" rel="noopener">
+          translationinhistory.tlu.ee
+        </a>
+      </p>
+    </div>
+
+  </div>
+
   <p class="footer-copy">© 2026 Tõlkes sündinud. Kõik õigused kaitstud.</p>
+
 </footer>
 
 <script src="script.js"></script>
