@@ -6,7 +6,6 @@
 <title>Sarjadest - Tõlkes sündinud</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Inter:wght@400;500&family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@400;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -15,69 +14,65 @@ body {
   font-family: "EB Garamond", serif;
 }
 
-/* Layout container */
+/* MAIN CONTENT */
 .content {
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 40px 20px 60px;
   line-height: 1.75;
 }
 
-/* Video space */
-.video-placeholder {
-  width: 100%;
-  height: 420px;
-  background: #e9e9e9;
-  border-radius: 12px;
-  margin: 40px 0;
+/* HERO TITLE */
+.hero {
+  max-width: 900px;
+  margin: 60px auto 20px;
+  text-align: center;
 }
 
-/* Headings */
+/* VIDEO + INTRO */
+.video-intro {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin: 30px 0 30px;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 340px;
+  background: #e9e9e9;
+  border-radius: 12px;
+}
+
+.video-text h3 {
+  text-align: left;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* TEXT */
 h2 {
   font-family: "Playfair Display", serif;
   margin-top: 60px;
   margin-bottom: 20px;
 }
 
-/* Paragraph spacing */
 p {
   margin-bottom: 16px;
 }
 
-/* IMAGE + TEXT OPTIONS */
-.text-row {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  margin: 30px 0;
-}
-
-.text-row.reverse {
-  flex-direction: row-reverse;
-}
-
-.text-row img {
-  width: 40%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.text-row .text {
-  flex: 1;
-}
-
+/* MOBILE */
 @media (max-width: 768px) {
-  .text-row,
-  .text-row.reverse {
-    flex-direction: column;
+  .video-intro {
+    grid-template-columns: 1fr;
   }
 
-  .text-row img {
-    width: 100%;
+  .video-text h3 {
+    text-align: center;
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -96,6 +91,14 @@ p {
   </ul>
 </nav>
 
+<aside class="chapter-nav">
+  <div class="chapter-title">Sisukord</div>
+
+  <a href="#varased">Varased sarjad</a>
+  <a href="#eesti-vabariik">Eesti Vabariik</a>
+  <a href="#noukogude-eesti">Nõukogude Eesti</a>
+  <a href="#tanapaev">Tänapäev</a>
+</aside>
 <!-- HERO -->
 <section class="hero">
   <h1>Sarjadest</h1>
@@ -104,65 +107,633 @@ p {
 <!-- CONTENT -->
 <div class="content">
 
-<!-- VIDEO SPACE -->
-<div class="video-placeholder"></div>
+  <!-- VIDEO + INTRO -->
+  <div class="video-intro">
+    <div class="video-placeholder"></div>
 
-<h3>Ülevaade olulisematest raamatusarjadest, mis on läbi aegade süstematiseerinud ja suunanud Eesti lugeja maitset.</h3>
-<p>Kirjandusteoste avaldamine sarjadena on läbi erinevate aegade täitnud sarnaseid eesmärke. Majanduslikult ja turunduslikult on ühtse kujunduse ja formaadiga raamatute tootmine odavam ning eduka avalöögi korral tekitab sari lugejates ka kogumissoovi. Ideelises plaanis võimaldab kirjanduse sarjana välja andmine suunata publiku lugemiskogemust mingi valitud teema või žanri lõikes. Selle missiooni täitmine on tihti olnud seotud haridusliku ja kultuuripoliitilise sooviga luua ja kujundada kultuurikaanonit. Lugejate jaoks pakkusid tõlkekirjanduse sarjad enne Internetiga kaasnenud infoplahvatust süsteemset ja usaldatavat teed, mille kaudu jõuda maailmaklassika paremikuni, uute kirjandusvoolude või erinevate kultuuride kirjandusteni. Esimeseks ilukirjanduslikuks raamatusarjaks võib pidada Riia misjonikeskuse välja antud nummerdatud tõlkeraamatuid lastele (1857–1887), mille sisuks olid vaimulikud lood usuleidmisest ja misjonitegevusest. Piltidevaesel ajal eristusid need esi- ja tagakaaneillustratsioonidega vihikukesed teistest trükistest. Sajandi viimases kolmandikus ilmusid seiklusjuttudele keskenduv „Rahwa raamatukogu” (1879–1881), kus avaldati esimene tõlge James Fenimore Cooperi „Nahksuka juttudest” (tlk J. Jürgenstein (1854–1914)), ja nii algupärast kui ka tõlkekirjandust koondav „Eesti Rahwa-Biblioteek”, mis alustas 1880 saksa keelest tõlgitud „Raudse näukattega mehega” Matthias Johann Eiseni (1857–1934) tõlkes.</p>
+    <div class="video-text">
+      <h3>
+        Ülevaade olulisematest raamatusarjadest, mis on läbi aegade
+        süstematiseerinud ja suunanud Eesti lugeja maitset.
+      </h3>
+    </div>
+  </div>
 
-<h2>20. sajandi algus</h2>
+  <!-- MAIN TEXT -->
+<p class="dropcap">Kirjandusteoste avaldamine sarjadena on läbi erinevate aegade täitnud sarnaseid eesmärke. Majanduslikult ja turunduslikult on ühtse kujunduse ja formaadiga raamatute tootmine odavam ning eduka avalöögi korral tekitab sari lugejates ka kogumissoovi. Ideelises plaanis võimaldab kirjanduse sarjana välja andmine suunata publiku lugemiskogemust mingi valitud teema või žanri lõikes. Selle missiooni täitmine on tihti olnud seotud haridusliku ja kultuuripoliitilise sooviga luua ja kujundada kultuurikaanonit. Lugejate jaoks pakkusid tõlkekirjanduse sarjad enne internetiga kaasnenud infoplahvatust süsteemset ja usaldatavat teed, mille kaudu jõuda maailmaklassika paremikuni, uute kirjandusvoolude või erinevate kultuuride kirjandusteni.
+</p>
 
-<p>20. sajandi alguse suurimaks tõlkesarjaks on Johannes Aaviku toimetatud „Hirmu ja õuduse jutud”, milles avaldati selle žanri väärtkirjandust Ameerikast (nt E. A. Poe), Prantsusmaalt (nt G. de Maupassant), Saksamaalt (nt E. T. A. Hoffmann), Venemaalt (nt N. Gogol) ja mujalt. Sarja populaarsust näitab selle pikk iga – esimene number ilmus 1914, viimane ehk 25. number 1929. aastal.</p>
+<h2 id="varased">Varased raamatusarjad</h2>
 
-<p>Näidendid ilmusid peamiselt Hans Leokese „Rahva näitemängude” (1902–1922) sarjas ja Vanemuise Näitelavas, mis koondasid enda kätte tõlgete lavastamise õigused.</p>
+<p>
+Esimeseks ilukirjanduslikuks raamatusarjaks võib pidada Riia misjonikeskuse
+välja antud nummerdatud tõlkeraamatuid lastele (1857–1887). Nende sisuks
+olid vaimulikud lood usuleidmisest ja misjonitegevusest. Piltidevaesel ajal
+eristus see sari teistest trükistest just oma esi- ja tagakaaneillustratsioonidega,
+mis muutsid väikesed vihikud visuaalselt ligitõmbavaks.
+</p>
 
-<p>Muinasjutud ja muu noortekirjandus avaldati Eesti Kirjanduse Seltsi koolikirjanduse toimkonna „Noorsoo kirjavara” sarjas.</p>
+<p>
+Sajandi viimases kolmandikus hakkasid ilmuma uued sarjad, mis pakkusid
+lugejale juba rohkem seiklusi ja ilukirjanduslikku mitmekesisust.
+</p>
 
-<h2>Eesti Vabariik</h2>
+<!-- RAHWA RAAMATUKOGU (image LEFT, text RIGHT) -->
+<div class="text-row">
 
-<p>Iseseisvusperioodi peamiseks tõlkesarjade publitseerijaks kujunes kirjastus-osaühing Loodus. Kirjastuse esimesena ilmunud sarjas „Looduse universaalbiblioteek” (1927–1931) avaldatud 109 teosest 105 olid tõlked (80 autori teosed tõlgituna 11 keelest).</p>
+  <!-- IMAGE -->
+  <div class="image-col">
+    <img src="materjalid/sarjad/ajalugu elulugudes.png" alt="Rahwa raamatukogu">
+    <h4>
+      August Wilhelm Grub, „Ajalugu elulugudes”, sarjas „Rahwa raamatukogu” (1879–1881). Allikas: DIGAR
+    </h4>
+  </div>
 
-<p>Mahukamaid teoseid anti välja „Looduse kroonise romaani” sarjas (1929–1940). Sarjas ilmus muuhulgas esimene Sigrid Undseti tõlge romaan „Kevad” Ernst Raudsepa (1899 1947) tõlkes, autori tuntuim teos „Kristiina Lauritsatütar” ilmus aga juba sarjas „Nobeli laureaadid” (1935–1939).</p>
-
-<p>Nõudlikumale sihtrühmale oli eelmainitud sarjale lisaks suunatud veel „Kirjasõna suurmeistrid” (1939). Samuti anti välja Fjodor Dostojevski kogutud teoste sari 15 köites.</p>
-
-<p>Universaalbiblioteegi järglane „Tänapäeva romaan“ (1932–1936) keskendus žanrikirjandusele. Krimikirjandust pakkus ka „Kriminaalromaan” (1937–1940). Noortele ilmus „Looduse kuldraamat” (1931–1939).</p>
-
-<p>Eesti Kirjanduse Seltsi „Maailmakirjandus” ja Eesti Kirjastuse Kooperatiivi „Põhjamaade romaane” laiendasid tõlkekirjanduse valikut.</p>
-
-<h2>Nõukogude eesti</h2>
-
-<p>Sõjajärgses Nõukogude Eestis anti välja Stalini preemiaga teoseid (1948‒1955). Hiljem ilmus „Seiklusjutte maalt ja merelt” (1955‒1962), mis tõi tagasi seiklus- ja ulmekirjanduse.</p>
-
-<p>„Loomingu Raamatukogu” keskendus kaasaegsele väliskirjandusele. Samuti ilmusid „Lenini preemia” ja „Nõukogude luule”.</p>
-
-<p>„Varamu” ja „Klassikalised lood” koondasid välisklassikat. „Mirabilia” tõi lugejateni rahvusvahelisi menukeid.</p>
-
-<h2>Tänapäev</h2>
-
-<p>Taasiseseisvunud Eestis tekkis uus kirjastusvabadus. Sarjad „Europeia”, „20. sajandi klassika” ja „Moodne aeg” tõid uusi tõlkesuundi.</p>
-
-<p>„Punane raamat” ja „Nobeli laureaat” jätkasid väärtkirjanduse traditsiooni. „Väikeste rahvaste suur kirjandus” tõi esile soome-ugri autorid.</p>
-
-<p>Tänapäeval on sarjad mitmekesised, hõlmates krimi-, fantaasia- ja armastusromaanide väljaandeid.</p>
-
-<p>Läbi aegade on Eesti lugejate lugemismaitset mõjutanud väga erinevad raamatusarjad, mis on tulnud nii kodumaisest kui ka rahvusvahelisest kirjandusest...</p>
-
-<p>Rahvusliku ärkamisaja suurkujud Friedrich Reinhold Kreutzwald ja Johann Voldemar Jannsen...</p>
-
-<p>Kreutzwaldi „Kalevipoeg” ja muud teosed kujundasid rahvuslikku identiteeti.</p>
-
-<p>J. D. Salingeri „Kuristik rukkis” tõi Eesti lugejani uue kultuurilise vaatenurga.</p>
-
-<p>Tõlkekirjandus okupatsioonide ajal oli ideoloogiline, kuid jätkas kirjanduse levitamist.</p>
-
-<p>Schilleri, Tolstoi ja „Kalevala” tõlked mõjutasid tugevalt Eesti kirjanduskultuuri.</p>
-
-<p>Itaalia röövlilood ja „Sõda ja rahu” tõlked olid olulised kirjanduslikud sündmused.</p>
-
-<p>„Mirabilia” sari tõi tagasi põnevus- ja ulmekirjanduse.</p>
+  <!-- TEXT -->
+  <div class="text">
+    <p>
+      Üheks oluliseks näiteks on <strong>„Rahwa raamatukogu” (1879–1881)</strong>, 
+      mis keskendus seiklusjuttudele ja pakkus lugejatele põnevust ning uusi maailmu.
+      Selles sarjas ilmus ka esimene eestikeelne tõlge James Fenimore Cooperi
+      „Nahksuka juttudest”, mis avas ukse Ameerika kirjandusele ja seiklusžanrile.
+    </p>
+  </div>
 
 </div>
+
+
+<!-- EESTI RAHWA-BIBLIOTEEK (image RIGHT, text LEFT) -->
+<div class="text-row reverse">
+
+  <!-- IMAGE -->
+  <div class="image-col">
+    <img src="materjalid/sarjad/tahtsad mehed.jpg" alt="Eesti Rahwa-Biblioteek">
+    <h4>
+      Matthias Johann Eisen, „Tähtsad mehed”, sarjas „Eesti rahwa Biblioteek” (alates 1880). Allikas: DIGAR
+    </h4>
+  </div>
+
+  <!-- TEXT -->
+  <div class="text">
+    <p>
+      Teiseks tähtsaks sarjaks kujunes <strong>„Eesti Rahwa-Biblioteek” (alates 1880)</strong>, 
+      mis koondas nii tõlkekirjandust kui ka algupäraseid tekste.
+      Sari alustas Matthias Johann Eiseni tõlgitud teosega „Raudse näukattega mees”
+      ning kujunes oluliseks kanaliks, mille kaudu maailmakirjandus jõudis
+      eesti lugejani.
+    </p>
+  </div>
+
+</div>
+
+<h2 id="eesti-vabariik">Eesti Vabariik</h2>
+
+<!-- 1926 ELU -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/elu lugemisvara.jpg" alt="Elu lugemisvara">
+    <h4>„Päivila Synnöve”, 1926, Päivila Synnöve, Tõlkija: August Herms. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p class="dropcap">
+      Ajaviitekirjanduse levikut toetas kirjastus <strong>Elu</strong> sarjaga 
+      <strong>„Elu lugemisvara” (1926–1930)</strong>, mis pakkus lugejatele kergemini loetavat 
+      ja meelelahutuslikku kirjandust. Sari aitas kujundada varajast massikirjanduse turgu Eestis, 
+      tuues lugemisvara ka laiemale publikule.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1927–1931 UNIVERSAALBIBLIOTEEK -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/esimene ja viimane.jpg" alt="Looduse universaalbiblioteek">
+    <h4>„Esimene ja viimane, ​1927, John ​Galsworthy, Allikas: OSTA</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Iseseisvusperioodi peamiseks tõlkesarjade publitseerijaks kujunes kirjastus-osaühing Loodus. 
+      <strong>„Looduse universaalbiblioteek” (1927–1931)</strong> oli selle tegevuse üks keskseid sarju, 
+      milles avaldatud 109 teosest 105 olid tõlked. Kokku esindati seal 80 autori loomingut 11 keelest, 
+      mis tegi sellest ühe kõige rahvusvahelisema sarja tollases Eestis.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1929–1940 KROONISE ROMAAN -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/kevad.jpg" alt="Looduse kroonise romaan">
+    <h4>„Kevad”, 1930, Sigrid Undset, Tõlkija: Ernst Raudsepp. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Mahukamaid ja ambitsioonikamaid teoseid anti välja sarjas 
+      <strong>„Looduse kroonise romaani” (1929–1940)</strong>. Seal ilmus muuhulgas esimene Sigrid Undseti 
+      tõlge „Kevad” Ernst Raudsepa vahenduses. Samasse suunda kuulus ka autori tuntuim teos 
+      „Kristiina Lauritsatütar”, mis ilmus hiljem sarjas „Nobeli laureaadid”.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1931–1939 KULDRAAMAT -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/hobeuisud.jpg" alt="Looduse kuldraamat">
+    <h4>„Hõbeuisud”, 1932, Mary Mapes Dodge, Tõlkija: Auguste Pärn. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Noortele suunatud <strong>„Looduse kuldraamat” (1931–1939)</strong> sisaldas 91 teost, millest 77 olid tõlked, 
+      kujundades noore lugeja kirjanduslikku maitset ja lugemisharjumust.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1932–1936 TÄNAPÄEVA ROMAAN -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/ariane.jpg" alt="Tänapäeva romaan">
+    <h4>„Ariane”, 1932, Claude Anet, Tõlkija: Peeter Raag. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Universaalbiblioteegi järglane <strong>„Tänapäeva romaan” (1932–1936)</strong> keskendus juba selgelt 
+      žanrikirjandusele, pakkudes vaheldumisi kriminaal- ja armastusromaane, mis vastasid 
+      kasvavale massilisele lugemishuvile.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1935–1940 MAAILMAKIRJANDUS -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/zadig.jpg" alt="Maailmakirjandus">
+    <h4>„Zadig ja teisi jutustusi", 1936, Voltaire, Tõlkija: A. Aspel. Allikas: Antiikvariaat</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Eesti Kirjanduse Seltsi sari <strong>„Maailmakirjandus” (1935–1940)</strong> laiendas tõlkekirjanduse valikut, 
+      tuues eesti lugejani erinevate kultuuride ja ajastute kirjandust.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1935–1937 LOOSALU -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/kuristiku serval.jpg" alt="Väike raamatukogu Uudisjutud">
+    <h4>„Kuristiku serval", 1936, Dudley Hoys, Paul. Josè, Zane Grey. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Kirjastaja Jakob Loosalu sari <strong>„Väike raamatukogu „Uudisjutud”” (1935–1937)</strong> 
+      eristus oma järjejutulise avaldamisviisi poolest, kus lood ilmusid osade kaupa. 
+      See lõi tugeva seose ajaleheliku jutustamistraditsiooni ja raamatukirjanduse vahel.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1936–1939 PÕHJAMAADE -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/punane joon.jpg" alt="Põhjamaade romaanid">
+    <h4>„Põhjamaade romaane”,1936m Ilmari Kianto, Tõlkija: Eduard Virgo. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Eesti Kirjastuse Kooperatiivi sari <strong>„Põhjamaade romaane” (1936–1939)</strong> tõi esile põhjamaade kirjanduse, 
+      pakkudes alternatiivi saksa ja inglise kesksele tõlkekaanonile.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1936–1938 UUS EESTI -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/warastatud maal.jpg" alt="Uus Eesti rahvaraamatud">
+    <h4>„Warastatud maal", 1936, Anthony Armstrong, Tõlkija: Hello Sagrits. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Kirjastuse <strong>Uus Eesti</strong> sari <strong>„Uus Eesti" rahvaraamatud (1936–1938)</strong> 
+      jätkas rahvaliku lugemisvara traditsiooni, pakkudes nii tõlkeid kui ka populaarseid jutustusi, 
+      mis olid suunatud laiale lugejaskonnale.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1937–1940 KRIMINAALROMAAN -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/surm neljas.jpg" alt="Kriminaalromaan">
+    <h4>„Surm neljas astmes”, 1940, Joseph Smith Fletcher, Tõlkija: Mari Parras Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Krimikirjandust, peamiselt inglise autoritelt, pakkus sari 
+      <strong>„Kriminaalromaan” (1937–1940)</strong>, mis kujunes üheks esimeseks süsteemseks 
+      kriminaalžanri vahendajaks Eesti lugejale.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1939–1940 MARET -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/kreutzeri sonaat.jpg" alt="50-sendine romaan">
+    <h4>„50-sendine romaan”, 1939, Lev Tolstoi, Tõlkija: Viktor Veskimäe. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Kirjastuse <strong>Maret</strong> sari <strong>„50-sendine romaan” (1939–1940)</strong> keskendus 
+      eriti taskukohasele kirjandusele, muutes raamatud kättesaadavaks võimalikult laiale lugejaskonnale. 
+      Sarja eesmärk oli pakkuda odavat ja kiirelt loetavat ajaviitekirjandust.
+    </p>
+  </div>
+
+</div>
+
+<!-- 1939–1940 DOSTOJEVSKI -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img class="series-img" src="materjalid/sarjad/kogutud teosed.jpg" alt="Dostojevski kogutud teosed">
+    <h4>Fjodor Dostojevski kogutud teosed (1939–1940). Allikas: OSTA</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Aastatel 1939–1940 ilmus Fjodor Dostojevski kogutud teoste sari 15 köites, 
+      mis tõi eesti lugejani mh ka romaani „Kuritöö ja karistus”, mis oli varem ilmunud 
+      juba kroonise romaani sarjas.
+    </p>
+  </div>
+
+</div>
+
+<h2 id="noukogude-eesti">Nõukogude Eesti</h2>
+
+<!-- STALINI PREEMIAGA AUTASUSTATUD TEOS --> 
+<div class="text-row">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/peeter.jpg" alt="">
+    <h4>"Peeter esimene", 1949, Aleksei Tolstoi, Tõlkija:	Friedebert Tuglas. Allikas: Raamatukoi</h4>
+  </div>
+
+  <div class="text">
+    <p class="dropcap">
+      Sõjajärgses Nõukogude Eestis anti kõigepealt sarja koondatuna välja 
+      <strong>Stalini preemiaga autasustatud teoseid (1948–1955)</strong>. 
+      Selle viimaste köidete ilmumise ajaks oli aga kätte jõudnud nn sulaaeg ja üle pika aja, 
+      mil meelt lahutav kirjandus oli taunitud, said taas ilmuma hakata seiklus- ja ulmejutud.
+    </p>
+  </div>
+
+</div>
+
+<!-- SEIKLUSJUTUD MAALT JA MERELT -->
+<div class="text-row reverse">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/saladuslik saar.jpg" alt="">
+    <h4>„Saladuslik saar”, 1956, Jules Verne, Tõlkija: Silvia Tui. Allikas: Raamatukoi</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Seiklusjutte avaldati Eesti Riikliku Kirjastuse väga populaarses tõlkesarjas 
+      <strong>„Seiklusjutte maalt ja merelt” (1955–1962)</strong>. 
+      Selle kestvast mainest annab tunnistust hilisem kordustrükk (2004–2008).
+    </p>
+  </div>
+
+</div>
+
+<!-- SUURI SÕNAMEISTREID -->
+<div class="text-row">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/jane eyre.jpg" alt="">
+    <h4>„Jane Eyre” 1958, Charlotte Brontë, Tõlkijad:	Elvi Raidaru, Edla Valdna. Allikas: Raamatuvahetus</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      1957–1962 kirjastas Eesti Riiklik Kirjastus klassikalise kirjanduse sarja 
+      <strong>„Suuri sõnameistreid”</strong>, mis tõi lugejateni välismaiste klassikute teoseid.
+    </p>
+  </div>
+
+</div>
+
+<!-- LOOMINGU RAAMATUKOGU -->
+<div class="text-row reverse">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/Hadži-Aga.jpg" alt="">
+    <h4>„Hadži-Aga”, 1959, Sadeq Hedayat, Tõlkija: Inna Gens. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Samal ajal hakkas ilmuma ka sari <strong>„Loomingu Raamatukogu”</strong>, 
+      mis keskendus kaasaegse väliskirjanduse tõlgetele ning kujunes üheks mõjukamaks kirjandusväljaandeks.
+    </p>
+  </div>
+
+</div>
+
+<h3>Nõukogude ideoloogilised sarjad</h3>
+
+<!-- LENINI PREEMIA -->
+<div class="text-row">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/kuljus.jpg" alt="">
+    <h4>„Lenini preemia”, 1966, Oless Gontšar, Tõlkija: Madis Nurmik. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Nõukogude ideoloogilisemate sarjade seas oli 
+      <strong>„Lenini preemia” (1960–1967)</strong>, 
+      mis tutvustas ametlikult tunnustatud autorite teoseid.
+    </p>
+  </div>
+
+</div>
+
+<!-- NÕUKOGUDE LUULE -->
+<div class="text-row reverse">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/lendavad mannid.jpg" alt="">
+    <h4>„Lendavad männid”, 1972, Justinas Marcinkevičius, Tõlkija: Mihkel Loodus. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      <strong>„Nõukogude luule” (1971–1990)</strong> koondas nõukogude perioodi poeetikat ja ideoloogiliselt sobivaid luuletusi.
+    </p>
+  </div>
+
+</div>
+
+<!-- MEHISUS -->
+<div class="text-row">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/Kuidas karastus teras.jpg" alt="">
+    <h4>„Kuidas karastus teras”, 1984, Nikolai Ostrovski, Tõlkija: Lembit Remmelgas. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Noortele lugejatele suunatud sari <strong>„Mehisus” (1984–1987)</strong> 
+      keskendus seikluslikele ja kasvatava sisuga tekstidele.
+    </p>
+  </div>
+
+</div>
+
+<!-- 15 -->
+<div class="text-row reverse">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/udu hajub.jpg" alt="">
+    <h4>„Udu hajub", 1985, Sabir Azäri, Tõlkija: Aadu Vari. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Sari <strong>„15” (1977–1989)</strong> koondas mitmesugust populaarset kirjandust laiale lugejaskonnale.
+    </p>
+  </div>
+
+</div>
+
+<h3>Tõlkekirjanduse sarjad</h3>
+
+<!-- VARAMU -->
+<div class="text-row">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/tulipunane.jpg" alt="">
+    <h4>„Tulipunane kirjatäht”, 1981, Nathaniel Hawthorne, Tõlkija: Lydia Mölder. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      <strong>„Varamu” (1972–1983)</strong> keskendus maailmakirjanduse klassikale.
+    </p>
+  </div>
+
+</div>
+
+<!-- KLASSIKALISED LOOD -->
+<div class="text-row reverse">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/mtsenski.jpg" alt="">
+    <h4>„Mtsenski maakonna leedi Macbeth”, 1981, Nikolai Leskov, Tõlkija: Friedrich Kõlli. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      <strong>„Klassikalised lood” (1970–1992, jätkus 2000. aastast)</strong> jätkas maailmakirjanduse tutvustamist mitmes žanris.
+    </p>
+  </div>
+
+</div>
+
+<!-- MIRABILIA -->
+<div class="text-row">
+
+  <div class="image-col">
+    <img class="series-img" src="materjalid/sarjad/kaks kolmandikku.jpg" alt="">
+    <h4>„Kaks kolmandikku vaimu”, 1984, Helen McCloy, Tõlkija: Viktor Kerge. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      <strong>„Mirabilia” (alates 1973)</strong> oli põnevus- ja ulmekirjanduse sari, 
+      mis tõi Nõukogude Eesti lugejateni rahvusvahelisi bestsellerid.  Sarja pikk eluiga ja mahukas valik kinnitas selle populaarsust lugejate seas.
+    </p>
+  </div>
+
+</div>
+
+<h2 id="tanapaev">Tänapäev</h2>
+
+<!-- INTRO -->
+<div class="text-row">
+
+  <div class="text">
+    <p class="dropcap">
+      1991. aastast alguse saanud tõlkesarjad peegeldasid taasiseseisvunud Eesti kirjastustegevuse uut vabadust. Väärib märkimist Lauri Leesi (snd 1945) algatatud <strong>„Europeia” (1989–2002)</strong>, mis tutvustas klassikalist maailmakirjandust uute ja värskete tõlgete kaudu.
+    </p>
+  </div>
+
+</div>
+
+<!-- EUROPEIA -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img src="materjalid/sarjad/tatriromaan.jpg" alt="Europeia">
+    <h4>„Teatriromaan", 1997, Mihhail Bulgakov, Tõlkija: Vidrik Kivilo. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Väärtkirjanduse sarju hakkas ilmuma mitmetelt kirjastustelt, mis avasid uue tõlkekirjanduse laine ning laiendasid oluliselt valikut varasemate kümnenditega võrreldes.
+    </p>
+  </div>
+
+</div>
+
+<!-- VARRAK 20. SAJANDI KLASSIKA -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img src="materjalid/sarjad/esimene inimene.jpg" alt="20. sajandi klassika">
+    <h4>„Esimene inimene”, 2000, Albert Camus, Tõlkija: Triinu Tamm. Allikas: Raamatukoi</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Kirjastus Varrak alustas sarjaga <strong>„20. sajandi klassika” (1994)</strong>, mis keskendus modernse maailmakirjanduse olulisematele teostele.
+    </p>
+  </div>
+
+</div>
+
+<!-- NOBELI LAUREAAT -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img src="materjalid/sarjad/sada-aastat-uksildust_2002.jpg" alt="Nobeli laureaat">
+    <h4>„Sada aastat üksildust”, 2002, Gabriel García Márquez, Tõlkija:	Aita (Justa) Kurfeldt. Allikas: Raamatukoi</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Kirjastus Eesti Raamat jätkas sarjaga <strong>„Nobeli laureaat” (1989)</strong>, mis tõi eesti lugejani Nobeli preemiaga pärjatud autorite teoseid.
+    </p>
+  </div>
+
+</div>
+
+<!-- PÕHJAMAADE ROMAAN (1997) -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img src="materjalid/sarjad/orm punane.jpg" alt="Põhjamaade romaan">
+    <h4>„Orm Punane”, 1997, Frans G. Bengtsson, Tõlkija: Anu Saluäär. Allikas: DIGAR</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Sama kirjastus jätkas ka sarjaga <strong>„Põhjamaade romaan” (1997)</strong>, mis tõi esile Põhjamaade kirjanduse uued ja klassikalised teosed.
+    </p>
+  </div>
+
+</div>
+
+<!-- MOODNE AEG -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img src="materjalid/sarjad/apelsin.jpg" alt="Moodne aeg">
+    <h4>„Kellavärgiga apelsin”, 2001, Anthony Burgess, Tõlkija: Udo Uibo. Allikas: Rahva Raamat</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Sarjaga <strong>„Moodne aeg” (2001)</strong> tõi Varrak lugejateni palju esmatõlkeid kaasajal tähelepanu äratanud teostest, avardades kaasaegse kirjanduse kättesaadavust. Raamatusarja "Moodne aeg" eelkäijaks oli kirjastuse Varrak aastatel 1994–2001 välja antud raamatusari "Iiris", mis 2001. aastal jagunes kaheks raamatusarjaks: "Moodne aeg" ja "20. sajandi klassika".
+    </p>
+  </div>
+
+</div>
+
+<!-- PUNANE RAAMAT -->
+<div class="text-row reverse">
+
+  <div class="image-side">
+    <img src="materjalid/sarjad/golding.jpg" alt="Punane raamat">
+    <h4>„Kärbeste Jumal”, 2003, 	William Golding, Tõlkija: Henno Rajandi Allikas: Raamatukoi</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Kirjastuse Tänapäev sari <strong>„Punane raamat” (2000)</strong> sisaldab nii kordustrükke kui ka värskeid eestindusi.
+    </p>
+  </div>
+
+</div>
+
+<!-- VÄIKSETE RAHVASTE SUUR KIRJANDUS -->
+<div class="text-row">
+
+  <div class="image-side">
+    <img src="materjalid/sarjad/talvesina.jpg" alt="Väikeste rahvaste suur kirjandus">
+    <h4>„Talvesina”, 2009, János Pusztay, Tõlkija Arvo Valton. Allikas: Raamatuvahetus</h4>
+  </div>
+
+  <div class="text">
+    <p>
+      Arvo Valtoni (1935–2024) eestvedamisel ilmus soome-ugri autorite luulesari <strong>„Väikeste rahvaste suur kirjandus” (2005–2013)</strong>, mis tutvustas hõimurahvaste kirjandust.
+    </p>
+  </div>
+
+</div>
+
+<!-- VIIMANE ÜLDISTAV LÕIK -->
+<div class="text-row reverse">
+
+  <div class="text">
+    <p>
+      Mitmed sarjad, nagu <strong>„Mirabilia”</strong>, jätkasid nõukogude ajal populaarseks saanud põnevus- ja ulmekirjanduse suunda, pakkudes lugejatele mitmekülgset valikut. Erinevate kirjastuste krimi-, ulme- ja fantaasiakirjanduse sarju on raamatuturul rohkesti. Nende kõrvalt ei puudu ka armastusromaanide sarjad, millest mitmeid avaldab kirjastus Ersen. Kõik need sarjad täidavad olulise lünga eelnevate kümnendite kirjastustegevuses, pakkudes laiemat valikut tõlkeid erinevatest žanritest ja kultuuridest, mis varem olid kättesaamatud.
+    </p>
+  </div>
+
+</div>
+
+
 <!-- FOOTER -->
 <footer class="footer">
 
@@ -189,7 +760,7 @@ p {
     <div class="footer-col">
       <p class="footer-title">Kontakt</p>
       <p class="footer-text">
-        <a href="https://translationinhistory.tlu.ee/" target="_blank" rel="noopener">
+        <a href="https://translationinhistory.tlu.ee/" target="_blank">
           translationinhistory.tlu.ee
         </a>
       </p>
