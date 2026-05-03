@@ -1141,3 +1141,35 @@ h4 {
     margin-left: 0;
   }
 }
+
+.sub-book-img-container {
+  position: relative;
+}
+
+/* metadata under the click hint */
+.img-meta {
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.img-meta span {
+  display: block;
+}
+
+.book-link {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.book-link:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
