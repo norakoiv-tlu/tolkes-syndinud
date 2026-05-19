@@ -613,6 +613,16 @@ h4 {
 
   color: inherit;
 }
+
+.näitusest-text p.team:first-of-type::first-letter {
+  font-family: inherit;
+  font-size: inherit;
+  float: none;
+  line-height: inherit;
+  margin-right: 0;
+  margin-top: 0;
+}
+
 /* =========================================================
    CAROUSEL
    ========================================================= */
