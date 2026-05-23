@@ -909,9 +909,12 @@ h4 {
 .footer-grid {
   max-width: 1000px;
   margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+
   gap: 60px;
+
   text-align: left;
   width: 100%;
 }
@@ -1476,5 +1479,135 @@ h4 {
 
   .image-wrapper {
     order: 1;
+  }
+}
+
+.timeline-video {
+  width: 100%;
+  max-width: 850px;
+
+  aspect-ratio: 9 / 16;
+  height: auto;
+
+  display: block;
+  margin: 40px auto;
+
+  object-fit: cover;
+  background: #000;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.22);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* hover effect */
+.timeline-video:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.28);
+}
+
+@media (max-width: 768px) {
+
+  .timeline-video {
+    margin: 25px auto;
+    border-radius: 8px;
+  }
+
+}
+
+/* =========================================================
+   RESOURCE LINKS
+   ========================================================= */
+
+.resource-section {
+  max-width: 900px;
+  margin: 80px auto 60px;
+  padding: 0 20px;
+
+  text-align: center;
+}
+
+.resource-links {
+  display: grid;
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.resource-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 26px;
+
+  text-decoration: none;
+
+  color: var(--text-primary);
+
+  background: rgba(255,255,255,0.72);
+
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 14px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.10);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255,255,255,0.9);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.16);
+}
+
+.resource-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+
+  text-align: left;
+}
+
+.resource-arrow {
+  font-size: 1.4rem;
+  opacity: 0.7;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.resource-card:hover .resource-arrow {
+  transform: translateX(5px);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+
+  .resource-card {
+    padding: 18px 20px;
+  }
+
+  .resource-title {
+    font-size: 1rem;
   }
 }
